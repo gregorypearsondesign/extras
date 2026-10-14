@@ -2,6 +2,13 @@
 
 Static single-page HTML experiments for the Extras section of the site. Pushes to `main` deploy to Vercel (preset Other, no build command, no output directory). Local path: `~/Code/extras`.
 
+## Guardrail: git, gh and vercel
+
+- Run `git`, `gh` and `vercel` commands only from inside this repo folder (`~/Code/extras`).
+- Never touch any Vercel project other than `extras`. Never link, deploy, redeploy, promote, roll back, rename, remove, change settings or env vars of, or add, move or remove domains on any other project.
+- Before every `vercel` command, read `.vercel/project.json` and confirm `"projectName": "extras"`. If it says anything else, or the file is missing, stop and ask.
+- Never run `vercel link` or `vercel project` commands without naming `extras` explicitly.
+
 ## Folder convention
 
 - Each experiment lives at `extras/<slug>-figma-motion/index.html`.
