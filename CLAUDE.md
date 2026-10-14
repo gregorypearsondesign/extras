@@ -1,6 +1,6 @@
 # Extras
 
-Static single-page HTML experiments for the Extras section of the site. Pushes to `main` deploy to Vercel (preset Other, no build command, no output directory). Local path: `~/Code/extras`.
+Static single-page HTML experiments for the Extras section of the site. Pushes to `main` deploy to Vercel (preset Other, no build command, no output directory). Local path: `~/Code/extras` (GitHub repo `extras`).
 
 ## Guardrail: git, gh and vercel
 
@@ -11,8 +11,8 @@ Static single-page HTML experiments for the Extras section of the site. Pushes t
 
 ## Folder convention
 
-- Each experiment lives at the repo root as `<slug>-figma-motion/index.html`. There is no `extras/` folder.
-- Live URL: `$SITE_URL/<slug>-figma-motion/` (`SITE_URL` is in `scripts/site.env`).
+- Each experiment lives at the repo root as `<slug>/index.html`. There is no `extras/` folder. The five original motion pages keep `<slug>-figma-motion/`, and `scripts/publish.sh` uses that folder when it already exists.
+- Live URL: `$SITE_URL/<slug>/` (`SITE_URL` is in `scripts/site.env`).
 - One commit per page: `Add <Readable name> experiment` (or `Update ...` for an existing page).
 
 ## Publishing
