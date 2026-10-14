@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Publish one Extras experiment page.
 # Usage: scripts/publish.sh <source-html> <slug> "<Readable name>" [--no-push]
-#   Copies <source-html> to extras/<slug>-figma-motion/index.html, runs the scrub
+#   Copies <source-html> to <slug>-figma-motion/index.html, runs the scrub
 #   check, commits "Add <Readable name> experiment", pushes main, waits for the
 #   Vercel deploy to serve the new file, and prints the live URL.
 set -euo pipefail
@@ -42,7 +42,7 @@ if [[ -n "$(git diff --cached --name-only)" ]]; then
   echo "publish: there are already staged changes; commit or unstage them first" >&2; exit 2
 fi
 
-DEST="extras/$SLUG-figma-motion/index.html"
+DEST="$SLUG-figma-motion/index.html"
 VERB="Add"; [[ -f "$DEST" ]] && VERB="Update"
 mkdir -p "$(dirname "$DEST")"
 cp "$SRC" "$DEST"
@@ -60,7 +60,7 @@ else
   git log --oneline -1
 fi
 
-URL="$SITE_URL/extras/$SLUG-figma-motion"
+URL="$SITE_URL/$SLUG-figma-motion"
 if [[ $PUSH -eq 0 ]]; then
   echo "Committed locally (--no-push). Will be live at: $URL"
   exit 0
