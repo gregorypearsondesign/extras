@@ -110,7 +110,8 @@ table.easing td.v{font-variant-numeric:tabular-nums;white-space:nowrap}
   table.easing td.n{width:104px}
   table.easing th:nth-child(4),table.easing td.u{display:none}
   .bottom{flex-direction:column;align-items:stretch;gap:14px;margin-top:18px}
-  .caps{height:auto;min-height:62px}
+  .caps{display:grid;height:auto;min-height:0}
+  .cap{position:static;inset:auto;grid-area:1/1;align-self:start}
   .cap span{font-size:12.5px;max-width:none}
   .ctrl{justify-content:flex-start}
   .ctrl button{width:38px;height:38px}
